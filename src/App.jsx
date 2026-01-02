@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import Hero from "./components/Hero";
-import Postscript from './components/Postscript';
+
 import About from './components/About';
 import AuthorsNote from './components/AuthorsNote';
 import ChapterOne from './components/ChapterOne';
@@ -13,6 +13,7 @@ import ChapterSeven from './components/ChapterSeven';
 import FinalChapter from './components/FinalChapter';
 import BackCover from './components/BackCover';
 import Copyright from './components/Copyright';
+import Postscript from './components/Postscript';
 
 function App() {
   return (
