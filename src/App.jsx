@@ -13,13 +13,14 @@ import ChapterSeven from './components/ChapterSeven';
 import FinalChapter from './components/FinalChapter';
 import BackCover from './components/BackCover';
 import Copyright from './components/Copyright';
-import Postscript from './components/Postscript';
+import PostScript from './components/PostScript';
+
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Hero />} />
-      <Route path="/postscript" element={<Postscript />} />
+      <Route path="/postscript" element={<PostScript />} />
       <Route path="/about" element={<About />} />
       <Route path="/author" element={<AuthorsNote />} />
       <Route path="/one" element={<ChapterOne />} />

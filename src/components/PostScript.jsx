@@ -2,7 +2,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Postscript = () => {
+const PostScript = () => {
   return (
     <div className="relative h-screen w-full bg-[#08081a] flex items-center justify-center overflow-hidden">
       
@@ -64,4 +64,4 @@ const Postscript = () => {
   )
 }
 
-export default Postscript
+export default PostScript
