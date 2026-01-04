@@ -4,94 +4,110 @@ import { Link } from 'react-router-dom'
 
 const ChapterFour = () => {
   return (
-    <div className="relative h-screen w-full bg-[#08081a] flex items-center justify-center overflow-hidden">
+    <div className="relative min-h-screen w-full bg-[#e8e4d9] flex items-center justify-center overflow-x-hidden py-10 md:py-20">
       
-      {/* Background Glows - Shifted to cooler tones for this chapter */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-blue-600/5 rounded-full blur-[140px] pointer-events-none"></div>
-      <div className="absolute -top-20 -right-20 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+      {/* Subtle Paper Texture Overlay */}
+      <div className="fixed inset-0 opacity-[0.4] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]"></div>
 
-      {/* Main Content Container */}
-      <div className="relative w-full max-w-[1200px] h-[85vh] flex items-center justify-center">
+      {/* FIXED NAVIGATION - Safe inward positioning for mobile */}
+      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] z-[100] px-6 md:px-10 py-8 flex justify-between items-center pointer-events-none">
+        <Link 
+          to="/three" 
+          className="pointer-events-auto group flex items-center gap-3 bg-[#2a2a2a] text-[#fdfdfd] p-2 pr-5 rounded-full transition-all hover:scale-105 shadow-xl"
+        >
+          <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center">
+            <span className="text-lg">←</span>
+          </div>
+          <span className="text-[10px] tracking-[0.3em] font-bold uppercase">Prev</span>
+        </Link>
+
+        <Link 
+          to="/five" 
+          className="pointer-events-auto group flex items-center gap-3 bg-[#2a2a2a] text-[#fdfdfd] p-2 pl-5 rounded-full transition-all hover:scale-105 shadow-xl"
+        >
+          <span className="text-[10px] tracking-[0.3em] font-bold uppercase">Next</span>
+          <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center">
+            <span className="text-lg">→</span>
+          </div>
+        </Link>
+      </div>
+
+      {/* Main Book Page */}
+      <div className="relative w-full max-w-[850px] min-h-[90vh] bg-[#fdfdfd] text-[#1a1a1a] shadow-[0_10px_50px_rgba(0,0,0,0.15)] rounded-sm flex flex-col mx-4 overflow-hidden border border-black/5">
         
-        {/* The Text Card */}
-        <div className="relative h-full aspect-[3/4] md:aspect-[2/3] lg:aspect-[4/5] bg-[#0c0c24] shadow-[0_0_80px_rgba(0,0,0,0.9)] border border-white/5 rounded-lg flex flex-col p-8 md:p-14 overflow-y-auto no-scrollbar">
+        {/* Page Inner Shadow (Book Spine Effect) */}
+        <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-black/[0.03] to-transparent pointer-events-none"></div>
+
+        {/* Story Content Area */}
+        <div className="relative z-10 flex flex-col p-6 md:p-20 overflow-y-auto">
           
           {/* Chapter Header */}
-          <div className="mb-12 border-b border-white/5 pb-8">
-            <p className="text-orange-500/40 text-[10px] uppercase tracking-[0.8em] font-bold italic mb-4">Chapter IV</p>
-            <h1 className="text-white text-3xl md:text-4xl font-serif font-black tracking-tight leading-none mb-2">
-              When You Started Watching Back
-            </h1>
-          </div>
+          <header className="text-center mb-16 border-b border-black/10 pb-12">
+            <h2 className="text-[10px] tracking-[0.5em] uppercase font-light text-gray-500 mb-6 italic">Silent With My Brother</h2>
+            <p className="text-[11px] tracking-[0.2em] uppercase font-bold text-orange-800/60 mb-2">Chapter IV</p>
+            <h1 className="text-3xl md:text-5xl font-serif italic text-black tracking-tight leading-tight">When You Started Watching Back</h1>
+          </header>
 
-          {/* Chapter Body */}
-          <div className="space-y-10 text-white/90 font-serif leading-relaxed text-base md:text-lg tracking-wide">
+          <article className="font-serif text-[1.15rem] md:text-[1.25rem] leading-[1.9] text-justify space-y-8 text-black/80 antialiased pb-32">
             
-            <p className="text-2xl font-light text-white italic">Brother,</p>
+            <p className="text-2xl font-light text-black italic">Brother,</p>
 
-            <p>I knew the moment you understood. It wasn’t when you disagreed. Disagreement is loud. Understanding is quiet.</p>
-
-            <p className="text-gray-400">
-              You stopped asking questions. You stopped nodding. You stopped reacting at the right moments. That’s how I knew. 
-              <span className="text-white"> You began to watch me the way I watch them.</span>
+            <p>I knew the moment you understood. It wasn’t when you disagreed. Disagreement is loud. It announces itself. Understanding is quiet.</p>
+            
+            <p>
+              <span className="text-6xl float-left mr-4 mt-2 font-bold leading-none text-black font-serif">Y</span>
+              ou stopped asking questions. You stopped nodding. You stopped reacting at the right moments. That’s how I knew. You began to watch me the way I watch them.
             </p>
 
-            <div className="py-6 space-y-4">
-               <p className="text-blue-400 font-bold uppercase tracking-tighter border-b border-white/10 pb-2">The Signs of Danger</p>
-               <p className="italic text-gray-400">You noticed the pauses. The timing. The way I let others speak themselves into corners. You noticed how silence always arrived before obedience. And you didn’t interrupt it.</p>
-            </div>
+            <p>You noticed the pauses. The timing. The way I let others speak themselves into corners. You noticed how silence always arrived before obedience. And you didn’t interrupt it. That was the first sign of danger.</p>
 
-            <p>People think power is something you take. You realized it is something you <span className="text-orange-500 font-bold">withhold.</span></p>
+            <p>People think power is something you take. You realized it is something you <span className="italic font-bold">withhold.</span> You saw how I never finished sentences. How I let people complete them with fear. How they volunteered truths without being asked. And you started doing it too.</p>
 
-            <p>You learned that rules depend on participation. And participation depends on belief. <span className="underline decoration-blue-500 underline-offset-8">You stopped believing.</span> That is when systems lose their grip.</p>
+            <p>At first, unconsciously. Later, deliberately.</p>
 
-            {/* Inversion Block */}
-            <div className="bg-white/[0.02] border border-white/5 p-8 rounded-lg space-y-6">
-                <p className="text-sm tracking-widest uppercase text-blue-400 font-bold">The Shift</p>
-                <p className="italic">You learned to read fear in reverse. Not what they feared losing—but what they feared never becoming.</p>
-                <p className="text-white text-sm pt-4 border-t border-white/5">Confusion is more powerful than fear. Fear seeks safety. Confusion seeks authority. You never offered authority. You offered space.</p>
-            </div>
+            <p>You learned that every system has a rhythm. And that rhythm can be disrupted without resistance—only by stepping half a beat late. You learned that rules depend on participation. And participation depends on belief. You stopped believing. That is when systems lose their grip.</p>
 
-            <p className="text-xl text-white font-medium">You became inconsistent on purpose. Not chaotic—selective.</p>
+            <p>Brother, you didn’t confront the crowd. You mirrored it. You laughed when they laughed. You nodded when they nodded. You agreed just enough to be ignored. Ignored people move freely.</p>
 
-            <p className="text-gray-400">
-              Predictable to no one. Legible to no metric. That is how you vanished. While they argued about who you were, you learned who they needed you to be—and when.
-            </p>
+            <p>You learned to read fear in reverse. Not what they feared losing—but what they feared never becoming. Unfulfilled people are easier than desperate ones. They cling longer. They listen harder.</p>
 
-            {/* The Climax of the Chapter */}
-            <div className="py-10 text-center">
-              <p className="text-[10px] uppercase tracking-[0.6em] text-orange-500/60 font-bold mb-4">The Final Realization</p>
-              <h2 className="text-2xl md:text-3xl font-black text-white leading-tight">
-                The most dangerous person is not the one who controls fear—but the one who <span className="text-orange-500">no longer reacts to it.</span>
+            <p>You began to see types the way I do. The anxious leader. The righteous idiot. The silent follower waiting for permission. But unlike me, you didn’t organize them. You let them collide.</p>
+
+            <p>You learned that confusion is more powerful than fear. Fear seeks safety. Confusion seeks authority. You never offered authority. You offered space. Space is unbearable to them. They filled it with mistakes.</p>
+
+            <p>Brother, this is what frightened me: You stopped trying to escape the system. You realized escape is temporary. So you did something worse. You learned how to stand inside it without being counted.</p>
+
+            <p className="text-2xl italic text-black py-4">You became inconsistent on purpose. Not chaotic—selective.</p>
+
+            <p>Predictable to no one. Legible to no metric. That is how you vanished. You let them underestimate you. You let them label you wrong. Labels are blindfolds. While they argued about who you were, you learned who they needed you to be—and when.</p>
+
+            {/* RESPONSIVE CLIMAX BLOCK */}
+            <div className="text-center py-12 px-4 bg-black/[0.02] border-y border-black/5 my-10">
+              <p className="text-[12px] uppercase tracking-[0.4em] font-bold text-orange-900 mb-6">The Final Realization</p>
+              <h2 className="text-2xl md:text-4xl font-serif italic leading-tight text-black">
+                The most dangerous person is not the one who controls fear— <br className="hidden md:block" />
+                but the one who <span className="not-italic font-bold border-b-2 border-orange-800/20">no longer reacts to it.</span>
               </h2>
             </div>
 
-            <p>Fear stopped working on you. That is when I stopped teaching. Because now, brother, you don’t need rules. You see patterns.</p>
+            <p>Fear stopped working on you. That is when I stopped teaching. Because now, brother, you don’t need rules. You see patterns. You see timing. You see the moment when power shifts hands without anyone noticing.</p>
 
-            <p className="text-blue-400 italic">
-              The only thing more dangerous than a manipulator is someone who understands manipulation and chooses not to use it until it matters.
-            </p>
+            <p>You don’t lead crowds. You outlive them. And that is why I stay silent now.</p>
 
-            <p className="text-xl font-bold text-white pt-6 border-t border-white/5">
-                That’s how I know you’re ready. Not because you agree with me. But because you don’t need to.
-            </p>
+            <p>Because the only thing more dangerous than a manipulator is someone who understands manipulation and chooses not to use it until it matters. And when it does—They won’t see you coming. They won’t even know there was a choice.</p>
 
-            <p className="pt-12 text-center text-white/20 tracking-[1em] uppercase font-bold text-[10px]">— END OF NARRATIVE —</p>
-          </div>
+            <p>They will just feel that something has changed and they no longer know who decided.</p>
+
+            <p className="text-2xl italic text-black pt-6">That’s how I know you’re ready. Not because you agree with me. But because you don’t need to.</p>
+
+            {/* End of Chapter Mark - NOW CONSISTENT */}
+            <div className="pt-24 pb-12 text-center opacity-30">
+               <div className="w-16 h-[1px] bg-black mx-auto mb-4"></div>
+               <p className="text-[10px] tracking-[0.8em] font-bold uppercase">End of Chapter IV</p>
+            </div>
+          </article>
         </div>
       </div>
-
-      {/* Navigation */}
-      <Link to="/three" className="absolute bottom-10 left-10 group flex items-center gap-4 text-white z-50">
-        <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">←</div>
-        <span className="text-[10px] tracking-[0.4em] font-bold uppercase opacity-40 group-hover:opacity-100 transition-opacity">Prev</span>
-      </Link>
-
-      <Link to="/five" className="absolute bottom-10 right-10 group flex items-center gap-4 text-white z-50">
-        <span className="text-[10px] tracking-[0.4em] font-bold uppercase opacity-40 group-hover:opacity-100 transition-opacity">Next</span>
-        <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">→</div>
-      </Link>
-
     </div>
   )
 }

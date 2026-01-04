@@ -12,7 +12,6 @@ import ChapterSix from './components/ChapterSix';
 import ChapterSeven from './components/ChapterSeven';
 import FinalChapter from './components/FinalChapter';
 import BackCover from './components/BackCover';
-import Copyright from './components/Copyright';
 import PostScript from './components/PostScript';
 
 
@@ -32,7 +31,6 @@ function App() {
       <Route path="/seven" element={<ChapterSeven />} />
       <Route path="/final" element={<FinalChapter />} />
       <Route path="/cover" element={<BackCover />} />
-      <Route path="/copyright" element={<Copyright />} />
 
       
     </Routes>

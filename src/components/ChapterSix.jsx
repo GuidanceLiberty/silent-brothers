@@ -4,82 +4,97 @@ import { Link } from 'react-router-dom'
 
 const ChapterSix = () => {
   return (
-    <div className="relative h-screen w-full bg-[#08081a] flex items-center justify-center overflow-hidden">
+    <div className="relative min-h-screen w-full bg-[#e8e4d9] flex items-center justify-center overflow-x-hidden py-10 md:py-20">
       
-      {/* Background Glows - Deep Indigo and very subtle */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-indigo-950/20 rounded-full blur-[160px] pointer-events-none"></div>
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-purple-900/5 rounded-full blur-[100px] pointer-events-none"></div>
+      {/* Subtle Paper Texture Overlay */}
+      <div className="fixed inset-0 opacity-[0.4] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]"></div>
 
-      {/* Main Content Container */}
-      <div className="relative w-full max-w-[1200px] h-[85vh] flex items-center justify-center">
+      {/* FIXED NAVIGATION - Safe inward positioning for mobile */}
+      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] z-[100] px-6 md:px-10 py-8 flex justify-between items-center pointer-events-none">
+        <Link 
+          to="/five" 
+          className="pointer-events-auto group flex items-center gap-3 bg-[#2a2a2a] text-[#fdfdfd] p-2 pr-5 rounded-full transition-all hover:scale-105 shadow-xl"
+        >
+          <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center">
+            <span className="text-lg">←</span>
+          </div>
+          <span className="text-[10px] tracking-[0.3em] font-bold uppercase">Prev</span>
+        </Link>
+
+        <Link 
+          to="/seven" 
+          className="pointer-events-auto group flex items-center gap-3 bg-[#2a2a2a] text-[#fdfdfd] p-2 pl-5 rounded-full transition-all hover:scale-105 shadow-xl"
+        >
+          <span className="text-[10px] tracking-[0.3em] font-bold uppercase">Next</span>
+          <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center">
+            <span className="text-lg">→</span>
+          </div>
+        </Link>
+      </div>
+
+      {/* Main Book Page */}
+      <div className="relative w-full max-w-[850px] min-h-[90vh] bg-[#fdfdfd] text-[#1a1a1a] shadow-[0_10px_50px_rgba(0,0,0,0.15)] rounded-sm flex flex-col mx-4 overflow-hidden border border-black/5">
         
-        {/* The Text Card */}
-        <div className="relative h-full aspect-[3/4] md:aspect-[2/3] lg:aspect-[4/5] bg-[#0c0c24] shadow-[0_0_100px_rgba(0,0,0,1)] border border-white/[0.03] rounded-lg flex flex-col p-8 md:p-14 overflow-y-auto no-scrollbar">
+        {/* Page Inner Shadow (Book Spine Effect) */}
+        <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-black/[0.03] to-transparent pointer-events-none"></div>
+
+        {/* Story Content Area */}
+        <div className="relative z-10 flex flex-col p-6 md:p-20 overflow-y-auto">
           
           {/* Chapter Header */}
-          <div className="mb-12 border-b border-white/5 pb-8">
-            <p className="text-orange-500/40 text-[10px] uppercase tracking-[0.8em] font-bold italic mb-4">Chapter VI</p>
-            <h1 className="text-white text-3xl md:text-4xl font-serif font-black tracking-tight leading-none mb-2">
-              The Space Where I Used to Stand
-            </h1>
-          </div>
+          <header className="text-center mb-16 border-b border-black/10 pb-12">
+            <h2 className="text-[10px] tracking-[0.5em] uppercase font-light text-gray-500 mb-6 italic">Silent With My Brother</h2>
+            <p className="text-[11px] tracking-[0.2em] uppercase font-bold text-orange-800/60 mb-2">Chapter VI</p>
+            <h1 className="text-3xl md:text-5xl font-serif italic text-black tracking-tight leading-tight">The Space Where I Used to Stand</h1>
+          </header>
 
-          {/* Chapter Body */}
-          <div className="space-y-10 text-white/90 font-serif leading-relaxed text-base md:text-lg tracking-wide">
+          <article className="font-serif text-[1.1rem] md:text-[1.25rem] leading-[1.9] text-justify space-y-8 text-black/80 antialiased pb-32">
             
-            <p>I didn’t notice it at first. Power rarely announces transition. <span className="text-blue-400 italic">It migrates.</span></p>
-
-            <p className="text-gray-400">
-              I was still being consulted. Still deferred to. Still named. But something had shifted. 
-              People stopped looking at me for confirmation. They looked past me— <span className="text-white">toward absence. Toward you.</span>
+            <p>
+              <span className="text-6xl float-left mr-4 mt-2 font-bold leading-none text-black font-serif">I</span>
+              didn’t notice it at first. Power rarely announces transition. It migrates.
             </p>
 
-            <div className="py-8 space-y-4">
-               <p className="text-white font-bold uppercase tracking-tighter border-b border-white/10 pb-2">The Refined Confidence</p>
-               <p className="italic text-gray-500">They assumed restraint meant uncertainty. But restraint is confidence refined. You didn’t shape outcomes. You shaped conditions.</p>
-            </div>
+            <p>I was still being consulted. Still deferred to. Still named. But something had shifted. People stopped looking at me for confirmation. They looked past me—toward absence. Toward you.</p>
 
-            <p>In delay, people reveal priority. In urgency, they lie. You gave them time and they confessed everything.</p>
+            <p>Not for answers. For orientation. You never offered guidance. That was the mistake they made. They assumed restraint meant uncertainty. But restraint is confidence refined.</p>
 
-            <p className="text-2xl font-light text-white italic border-l-2 border-orange-500/40 pl-6">
-              I realized then what I had done. I taught you how to read systems. I taught you how to see fear. I did not teach you how to stop.
+            <p>You didn’t shape outcomes. You shaped conditions. Where I once controlled momentum, you controlled timing. Where I once used fear to accelerate decisions, you slowed everything down.</p>
+
+            <p className="italic font-bold text-black border-l-4 border-orange-800/20 pl-6 py-2">
+              Delay became your weapon. In delay, people reveal priority. In urgency, they lie. You gave them time and they confessed everything.
             </p>
 
-            {/* Pivot Block */}
-            <div className="bg-white/[0.01] border border-white/5 p-8 rounded-lg space-y-6">
-                <p className="text-white text-xl">Power that must be used is already decaying.</p>
-                <p className="text-gray-400 italic">So you let mine exhaust itself. I watched authority lean forward and find no resistance—only space. That space used to belong to me.</p>
-            </div>
+            <p>I realized then what I had done. I taught you how to read systems. I taught you how to see fear. I did not teach you how to stop. Because I never learned. You did.</p>
 
-            <p>I mistook silence for loyalty. I mistook patience for waiting. You weren’t waiting. <span className="text-orange-500 font-bold">You were outlasting.</span></p>
+            <p className="text-2xl md:text-3xl font-black text-black pt-6 leading-tight">
+              You understood something I never accepted: <br />
+              <span className="italic font-light text-xl md:text-2xl">Power that must be used is already decaying.</span>
+            </p>
 
-            <div className="pt-10 space-y-8">
-              <h2 className="text-2xl md:text-4xl font-black text-white leading-tight tracking-tighter">
-                I had created a replacement. <br />
-                <span className="text-blue-400">Not for my position—</span>
-              </h2>
-              
-              <p className="text-3xl md:text-5xl font-serif italic text-white/20 hover:text-white/100 transition-colors duration-1000 cursor-default">
-                For the idea that power was necessary at all.
+            <p>So you let mine exhaust itself. I watched authority lean forward and find no resistance—only space. That space used to belong to me. I mistook silence for loyalty. I mistook patience for waiting.</p>
+
+            <p className="text-2xl md:text-3xl font-bold uppercase tracking-tight text-orange-900 text-center py-6">
+              You weren’t waiting. <br /> You were outlasting.
+            </p>
+
+            <p>That is when I understood I had not raised a successor. I had created a replacement.</p>
+
+            <div className="bg-black/[0.02] border-y border-black/5 p-8 my-10">
+              <p className="text-xl md:text-2xl italic text-black leading-relaxed">
+                Not for my position— <br />
+                <span className="not-italic font-bold">For the idea that power was necessary at all.</span>
               </p>
             </div>
 
-            <p className="pt-16 text-center text-white/10 tracking-[1.5em] uppercase font-bold text-[10px]">— THE END OF LESSONS —</p>
-          </div>
+            {/* FOOTER - Perfectly consistent with Chapter IV & V */}
+            <div className="pt-24 pb-12 text-center opacity-30">
+               <div className="w-16 h-[1px] bg-black mx-auto mb-4"></div>
+               <p className="text-[10px] tracking-[0.8em] font-bold uppercase">End of Chapter VI</p>
+            </div>
+          </article>
         </div>
       </div>
-
-      {/* Navigation */}
-      <Link to="/five" className="absolute bottom-10 left-10 group flex items-center gap-4 text-white z-50">
-        <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">←</div>
-        <span className="text-[10px] tracking-[0.4em] font-bold uppercase opacity-40 group-hover:opacity-100 transition-opacity">Prev</span>
-      </Link>
-
-      <Link to="/seven" className="absolute bottom-10 right-10 group flex items-center gap-4 text-white z-50">
-        <span className="text-[10px] tracking-[0.4em] font-bold uppercase opacity-40 group-hover:opacity-100 transition-opacity">Next</span>
-        <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">→</div>
-      </Link>
-
     </div>
   )
 }

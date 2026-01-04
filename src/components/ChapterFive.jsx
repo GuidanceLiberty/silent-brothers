@@ -4,88 +4,106 @@ import { Link } from 'react-router-dom'
 
 const ChapterFive = () => {
   return (
-    <div className="relative h-screen w-full bg-[#08081a] flex items-center justify-center overflow-hidden">
+    <div className="relative min-h-screen w-full bg-[#e8e4d9] flex items-center justify-center overflow-x-hidden py-10 md:py-20">
       
-      {/* Background Glows - Subdued and colder */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-slate-900/20 rounded-full blur-[140px] pointer-events-none"></div>
-      <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-indigo-900/10 rounded-full blur-[120px] pointer-events-none"></div>
+      {/* Subtle Paper Texture Overlay */}
+      <div className="fixed inset-0 opacity-[0.4] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]"></div>
 
-      {/* Main Content Container */}
-      <div className="relative w-full max-w-[1200px] h-[85vh] flex items-center justify-center">
-        
-        {/* The Text Card */}
-        <div className="relative h-full aspect-[3/4] md:aspect-[2/3] lg:aspect-[4/5] bg-[#0c0c24] shadow-[0_0_80px_rgba(0,0,0,1)] border border-white/5 rounded-lg flex flex-col p-8 md:p-14 overflow-y-auto no-scrollbar">
-          
-          {/* Chapter Header */}
-          <div className="mb-12 border-b border-white/5 pb-8">
-            <p className="text-orange-500/40 text-[10px] uppercase tracking-[0.8em] font-bold italic mb-4">Chapter V</p>
-            <h1 className="text-white text-3xl md:text-4xl font-serif font-black tracking-tight leading-none mb-2">
-              What You Refused to Become
-            </h1>
+      {/* FIXED NAVIGATION - Safe inward positioning for mobile */}
+      <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] z-[100] px-6 md:px-10 py-8 flex justify-between items-center pointer-events-none">
+        <Link 
+          to="/four" 
+          className="pointer-events-auto group flex items-center gap-3 bg-[#2a2a2a] text-[#fdfdfd] p-2 pr-5 rounded-full transition-all hover:scale-105 shadow-xl"
+        >
+          <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center">
+            <span className="text-lg">←</span>
           </div>
+          <span className="text-[10px] tracking-[0.3em] font-bold uppercase">Prev</span>
+        </Link>
 
-          {/* Chapter Body */}
-          <div className="space-y-10 text-white/90 font-serif leading-relaxed text-base md:text-lg tracking-wide">
-            
-            <p className="text-2xl font-light text-white italic">Brother,</p>
-
-            <p>This is where you surprised me. Power always asks for proof. Not of competence—<span className="text-orange-500 font-bold">of loyalty.</span></p>
-
-            <p className="text-gray-400">
-              It wants you to cross a line publicly so retreat becomes impossible. It wants witnesses. It wants bloodless sacrifices that still stain.
-            </p>
-
-            <p>I expected you to hesitate. You didn’t. You refused. Not loudly. Not dramatically. You simply did not perform the role they prepared for you.</p>
-
-            <div className="py-6 border-y border-white/5 my-8">
-               <p className="text-sm tracking-widest uppercase text-gray-500 font-bold mb-4 italic">The Recruitment</p>
-               <p className="text-white">They offered you legitimacy wrapped in obligation. They offered you authority with conditions disguised as trust. <span className="text-blue-400 italic">You saw it instantly.</span></p>
-            </div>
-
-            <p>They wanted to see if you would harden. If you would simplify people into tools. If you would trade understanding for efficiency. You understood too much to do that.</p>
-
-            <p className="text-2xl font-black text-white leading-tight">
-              Moral clarity is disruptive. <br />
-              <span className="text-gray-500 italic text-xl">Not because it is righteous, but because it does not negotiate with fear.</span>
-            </p>
-
-            {/* The Refusal Block */}
-            <div className="bg-white/[0.02] border border-white/5 p-8 rounded-lg space-y-4">
-                <p>You didn’t expose the system. You didn’t condemn it. You didn’t try to fix it.</p>
-                <p className="text-orange-400 font-bold text-xl uppercase tracking-tighter">You simply withdrew your permission.</p>
-                <p className="text-xs text-gray-500 pt-2 tracking-widest">THAT IS UNFORGIVABLE.</p>
-            </div>
-
-            <p>They waited for you to become cruel. Cruelty would have justified them. You stayed precise instead. Precision without malice looks like judgment.</p>
-
-            <p className="text-gray-400">
-              They mistook isolation for punishment. They didn’t realize <span className="text-white">you were never seeking inclusion.</span>
-            </p>
-
-            <p className="text-xl font-bold text-white pt-6 border-t border-white/5 italic">
-                You refused to become the thing they needed you to be. And in doing so, you became something they couldn’t classify.
-            </p>
-
-            <p className="text-2xl font-black text-orange-500 uppercase tracking-tighter">
-                That’s when they started watching you.
-            </p>
-
-            <p className="pt-12 text-center text-white/20 tracking-[1em] uppercase font-bold text-[10px]">— THE FINAL CHAPTER —</p>
+        <Link 
+          to="/six" 
+          className="pointer-events-auto group flex items-center gap-3 bg-[#2a2a2a] text-[#fdfdfd] p-2 pl-5 rounded-full transition-all hover:scale-105 shadow-xl"
+        >
+          <span className="text-[10px] tracking-[0.3em] font-bold uppercase">Next</span>
+          <div className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center">
+            <span className="text-lg">→</span>
           </div>
-        </div>
+        </Link>
       </div>
 
-      {/* Navigation */}
-      <Link to="/four" className="absolute bottom-10 left-10 group flex items-center gap-4 text-white z-50">
-        <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">←</div>
-        <span className="text-[10px] tracking-[0.4em] font-bold uppercase opacity-40 group-hover:opacity-100 transition-opacity">Prev</span>
-      </Link>
+      {/* Main Book Page */}
+      <div className="relative w-full max-w-[850px] min-h-[90vh] bg-[#fdfdfd] text-[#1a1a1a] shadow-[0_10px_50px_rgba(0,0,0,0.15)] rounded-sm flex flex-col mx-4 overflow-hidden border border-black/5">
+        
+        {/* Page Inner Shadow (Book Spine Effect) */}
+        <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-black/[0.03] to-transparent pointer-events-none"></div>
 
-      <Link to="/six" className="absolute bottom-10 right-10 group flex items-center gap-4 text-white z-50">
-        <span className="text-[10px] tracking-[0.4em] font-bold uppercase opacity-40 group-hover:opacity-100 transition-opacity">Next</span>
-        <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">→</div>
-      </Link>
+        {/* Story Content Area */}
+        <div className="relative z-10 flex flex-col p-6 md:p-20 overflow-y-auto">
+          
+          {/* Chapter Header */}
+          <header className="text-center mb-16 border-b border-black/10 pb-12">
+            <h2 className="text-[10px] tracking-[0.5em] uppercase font-light text-gray-500 mb-6 italic">Silent With My Brother</h2>
+            <p className="text-[11px] tracking-[0.2em] uppercase font-bold text-orange-800/60 mb-2">Chapter V</p>
+            <h1 className="text-3xl md:text-5xl font-serif italic text-black tracking-tight leading-tight">What You Refused to Become</h1>
+          </header>
 
+          <article className="font-serif text-[1.1rem] md:text-[1.25rem] leading-[1.9] text-justify space-y-8 text-black/80 antialiased pb-32">
+            
+            <p className="text-2xl font-light text-black italic">Brother,</p>
+
+            <p>this is where you surprised me. Power always asks for proof. Not of competence—of loyalty.</p>
+            
+            <p>
+              <span className="text-6xl float-left mr-4 mt-2 font-bold leading-none text-black font-serif">I</span>
+              t wants you to cross a line publicly so retreat becomes impossible. It wants witnesses. It wants bloodless sacrifices that still stain.
+            </p>
+
+            <p>I expected you to hesitate. Hesitation is common. You didn’t. You refused. Not loudly. Not dramatically. You simply did not perform the role they prepared for you.</p>
+
+            <p>They offered you legitimacy wrapped in obligation. They offered you authority with conditions disguised as trust. You saw it instantly.</p>
+
+            <p className="italic font-bold text-black border-l-4 border-orange-800/20 pl-6 py-2">
+              Power doesn’t recruit—it tests. The test is never about ability. It’s about alignment.
+            </p>
+
+            <p>They wanted to see if you would harden. If you would simplify people into tools. If you would trade understanding for efficiency. You understood too much to do that. That made you a problem.</p>
+
+            <p className="text-2xl md:text-3xl font-black text-black pt-6 leading-tight">
+              Moral clarity is disruptive. <br />
+              <span className="italic font-light text-xl md:text-2xl">Not because it is righteous, but because it does not negotiate with fear.</span>
+            </p>
+
+            <p>Villains are predictable. Heroes are manageable. But someone who sees the game and refuses to play either role—That unsettles everyone.</p>
+
+            <div className="bg-black/[0.02] border-y border-black/5 p-8 my-10 text-center">
+              <p className="mb-4">You didn’t expose the system. You didn’t condemn it. You didn’t try to fix it.</p>
+              <p className="text-2xl md:text-3xl font-bold uppercase tracking-tight text-orange-900">
+                You simply withdrew your permission.
+              </p>
+              <p className="text-[10px] tracking-[0.5em] font-bold opacity-40 mt-6">THAT IS UNFORGIVABLE.</p>
+            </div>
+
+            <p>They waited for you to become cruel. Cruelty would have justified them. You stayed precise instead. Precision without malice looks like judgment. And judgment makes people defensive.</p>
+
+            <p>They began to speak around you instead of to you. They began to exclude you from conversations that mattered. They mistook isolation for punishment. They didn’t realize you were never seeking inclusion.</p>
+
+            <p className="text-2xl italic text-black pt-6">
+              You refused to become the thing they needed you to be. And in doing so, you became something they couldn’t classify.
+            </p>
+
+            <p className="text-xl md:text-2xl font-bold text-orange-900 tracking-tight text-center md:text-left">
+              That’s when they started watching you.
+            </p>
+
+            {/* FIXED FOOTER - Consistent with Chapter III & IV */}
+            <div className="pt-24 pb-12 text-center opacity-30">
+               <div className="w-16 h-[1px] bg-black mx-auto mb-4"></div>
+               <p className="text-[10px] tracking-[0.8em] font-bold uppercase">End of Chapter V</p>
+            </div>
+          </article>
+        </div>
+      </div>
     </div>
   )
 }
